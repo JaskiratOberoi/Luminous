@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+html {
+  font-size: 24px;
+  font-family: "Open Sans", sans-serif;
+  color: #838eab;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  background: #eef6ff;
+  -ms-grid-columns: 1fr 1.5fr 2fr;
+      grid-template-columns: 1fr 1.5fr 2fr;
+  -ms-grid-rows: 0.4fr 6fr;
+      grid-template-rows: 0.4fr 6fr;
+      grid-template-areas: "head head head" "sidebar reminders chats";
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: head;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #174f90;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+}
+
+header .bell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .bell img {
+  padding: 0.7rem 0;
+  max-width: 40%;
+}
+
+header .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  padding: 0.2rem 0;
+}
+
+header .avatar img {
+  border: blue;
+  max-width: 50%;
+  border: 5px solid #4882c5;
+  border-radius: 5rem;
+}
+
+nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 250px;
+  min-width: 200px;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#003676), to(#4d87cb));
+  background: linear-gradient(#003676, #4d87cb);
+  padding: 1rem 0;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border: none;
+}
+
+nav img {
+  max-width: 50%;
+}
+
+nav .welcome-message {
+  font-size: 20px;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 20px;
+  list-style-type: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0;
+}
+
+nav ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10%;
+}
+
+nav ul li img {
+  max-width: 15%;
+  min-width: 10%;
+  padding-right: 10px;
+}
+
+nav ul .active {
+  background: #f1f1f1;
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: reminders;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .reminders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  height: 90%;
+  max-width: 400px;
+  min-width: 350px;
+  margin-top: 2rem;
+  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+main .reminders .reminder-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.2rem 0;
+  font-size: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+main .reminders .reminder-header .clock {
+  max-width: 10%;
+  padding: 0.5rem 0.5rem;
+}
+
+main .reminders .reminder-header .add-icon {
+  max-width: 7%;
+  padding: 0.5rem 0.5rem;
+}
+
+main .reminders .under-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background: #707070;
+  font-size: 12px;
+  padding: 0.1rem 0;
+  color: #fff;
+}
+
+main .reminders .under-header div {
+  padding: 0 1rem;
+}
+
+main .reminders .main-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  width: 100%;
+}
+
+main .reminders .main-table table {
+  width: 100%;
+  margin: 0.2rem 0;
+  border-collapse: collapse;
+  font-size: 12px;
+  color: #636363;
+}
+
+main .reminders .main-table table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background: #f8f8f8;
+  margin: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+}
+
+main .reminders .main-table table tr td {
+  padding: 0.8rem 0.5rem;
+}
+
+.chat-window {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: chats;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-grid-columns: 5fr 1fr;
+      grid-template-columns: 5fr 1fr;
+  grid-area: "windows bubble-sec";
+  background: url(media/chat.svg);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  justify-items: baseline;
+}
+
+.chat-window .bubbles {
+  grid-area: bubbles-sec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  position: absolute;
+  left: 95%;
+  top: 200px;
+  z-index: 100;
+}
+
+.chat-window .bubbles img {
+  width: 55px;
+  margin: 0.2rem 0;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
+}
+
+.chat-window .chat-section {
+  grid-area: windows;
+  padding: 2rem 1rem;
+  margin-right: 4rem;
+}
+
+.chat-window .chat-section .window {
+  background: #fff;
+  width: 500px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.chat-window .chat-section .window .head-title {
+  background: -webkit-gradient(linear, left top, left bottom, from(#02316a), to(#4c86c9));
+  background: linear-gradient(#02316a, #4c86c9);
+  padding: 0.5rem 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  color: #fff;
+}
+
+.chat-window .chat-section .window .main-window-1 input[type="text"] {
+  padding: 0.5rem 1rem;
+  border-color: #b9b9b9;
+  border-radius: 0.2rem;
+  width: 350px;
+}
+
+.chat-window .chat-section .window .main-window-1 input[type="button"] {
+  border: none;
+  width: 90px;
+  background: #4c86c9;
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+  padding: 0.35rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.hidden {
+  opacity: 0;
+}
+/*# sourceMappingURL=main.css.map */

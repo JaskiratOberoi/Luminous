@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luminous</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="shortcut icon" type="image/png" href="media/idea.png" />
+</head>
+
+<body>
+    <header>
+        <div class="bell"><img src="media/bell.png" alt="notif" /></div>
+        <div class="avatar"><img src="media/man.png" alt="avatar" /></div>
+    </header>
+    <nav class="sidebar">
+        <div class="logo">
+            <img src="media/luminous-logo-white-1024x221.png" alt="" />
+        </div>
+        <div class="welcome-message">
+            Welcome, Dagarwal
+        </div>
+        <ul class="navbar">
+            <li class="active">
+                <img src="media/dashboard.png" alt="dash icon" />DASHBOARD
+            </li>
+            <li><img src="media/man-user.png" alt="avatar icon" />PROFILE</li>
+            <li><img src="media/switch.png" alt="switch icon" />LOGOUT</li>
+        </ul>
+    </nav>
+    <main>
+        <div class="reminders">
+            <div class="reminder-header">
+                <img src="media/clock.svg" alt="reminders icon" class="clock" /> Reminders
+
+                <img src="media/plus.svg" alt="add icon" class="add-icon" />
+            </div>
+            <div class="under-header">
+                <div class="date">Date</div>
+                <div class="customer">Customer</div>
+                <div class="remarks">Remarks</div>
+            </div>
+            <div class="main-table">
+                <table>
+                    <tr>
+                        <td>01/20/2020</td>
+                        <td>John Doe</td>
+                        <td>Hello World, this is lorem ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>01/25/2020</td>
+                        <td>John Doe</td>
+                        <td>Hello World</td>
+                    </tr>
+                    <tr>
+                        <td>01/29/2020</td>
+                        <td>Jane Doe</td>
+                        <td>Need to tell about product.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    <div class="chat-window">
+        <div class="bubbles" id="bubbles">
+            <img src="media/add-chat.png" alt="plus" id="add-new" onclick="addNew()" /><img src="media/chat-bubble.png" alt="bubbles" id="bubble-1" />
+        </div>
+        <div class="chat-section" id="w-1">
+            <div class="window">
+                <div class="head-title">
+                    John Doe
+                </div>
+                <div class="main-window-1">
+                    <img src="media/chat-sample.png" alt="" />
+                    <input type="text" name="message" id="new-message" />
+                    <input type="button" value="Send" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
