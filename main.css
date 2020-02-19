@@ -21,6 +21,12 @@ body {
 }
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -29,13 +35,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   background: #174f90;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
   -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
           box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
   z-index: 20;
@@ -164,6 +164,7 @@ main {
 }
 
 main .reminders {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,6 +182,8 @@ main .reminders {
 }
 
 main .reminders .reminder-header {
+  position: relative;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,24 +209,14 @@ main .reminders .reminder-header .add-icon {
   padding: 0.5rem 0.5rem;
 }
 
-main .reminders .under-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  background: #707070;
-  font-size: 12px;
-  padding: 0.1rem 0;
-  color: #fff;
-}
-
-main .reminders .under-header div {
-  padding: 0 1rem;
+main .reminders .reminder-header .add-icon:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 main .reminders .main-table {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,23 +229,29 @@ main .reminders .main-table {
 }
 
 main .reminders .main-table table {
+  position: relative;
+  z-index: 2;
   width: 100%;
   margin: 0.2rem 0;
+  margin-top: 0rem;
   border-collapse: collapse;
   font-size: 12px;
   color: #636363;
 }
 
 main .reminders .main-table table tr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
   background: #f8f8f8;
   margin: 0.2rem 0.4rem;
   border-radius: 0.3rem;
+}
+
+main .reminders .main-table table tr th {
+  position: relative;
+  z-index: 1;
+  background: #707070;
+  font-size: 12px;
+  padding: 0.1rem 0;
+  color: #fff;
 }
 
 main .reminders .main-table table tr td {
@@ -344,5 +343,70 @@ main .reminders .main-table table tr td {
 
 .hidden {
   opacity: 0;
+}
+
+.modal {
+  position: absolute;
+  z-index: 80;
+  display: none;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  margin: 0 1rem;
+  background: #fff;
+  top: 30%;
+}
+
+.modal .modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+
+.modal .modal-content .cname,
+.modal .modal-content .rtext {
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.3rem;
+  border: none;
+  width: 100%;
+  background: #eeeeee;
+  margin-top: 1rem;
+  color: #424242;
+}
+
+.modal .modal-content .rtext {
+  margin-bottom: 1rem;
+  height: 2.5rem;
+}
+
+.modal .modal-content .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal .modal-content .options .add-reminder,
+.modal .modal-content .options .discard {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.2rem;
+  background: #407abd;
+  width: 50%;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
+
+.modal .modal-content .options .discard {
+  background: #ff7777;
 }
 /*# sourceMappingURL=main.css.map */
